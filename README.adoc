@@ -59,6 +59,10 @@ Use managed disks if prompted. OpenShift will work just find with a Standard HDD
 
 image::images/waitForProvisioning.png[]
 
+When complete, go and find the virtual machine;
+
+image::images/provisioningComplete.png[]
+
 === Set a DNS name
 
 When the virtual machine has been provisioned, set a DNS name in the virtual machine overview and take a note of the public IP address. 
