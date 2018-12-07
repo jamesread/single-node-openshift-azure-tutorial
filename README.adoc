@@ -83,13 +83,17 @@ Get ready for some OpenShifting :-)
 
 == Prepare the machine for OpenShift
 
-== Disconnect from Red Hat Update Infrastructure; 
+=== Disconnect from Red Hat Update Infrastructure; 
 
 RHEL machines provisioned from the marketplace come connected to Red Hat Update Infrastructure. However, Red Hat Update Infrastructure is for RHEL only, not OpenShift.
 
     root@openshift-allinone: rpm -e rhui-azure-rhel7
 
-=== Option a) If you have a working Red Hat subscription; 
+=== Configure OpenShift repositories
+
+In the next section, choose Option A **or** Option B. Don't do both :-)
+
+==== Option a) If you have a working Red Hat subscription; 
 
     subscription-manager register
     Username: …
@@ -111,7 +115,7 @@ Disable all default repos, and then attach to the required repos.
     subscription-manager repos --enable ‘rhel-7-server-extras-rpms’
     subscription-manager repos --enable ‘rhel-7-server-ose-3.6-rpms’
 
-=== Option b) If you have a repository provided by your lab administrator; 
+==== Option b) If you have a repository provided by your lab administrator; 
 
     cd /etc/yum.repos.d/
     wget http://YOUR-ADDRESS-HERE.cloudapp.azure.com/repos/lab.repo 
