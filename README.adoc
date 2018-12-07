@@ -1,4 +1,5 @@
 :data-uri:
+:toc:
 
 = single-node-openshift-azure-demo
 
@@ -23,27 +24,27 @@ Use common sense details for the VM basics, you should use a SSH key if you have
 
 image::images/provisioningDialog.png[]
 
-== Sizing
+=== Sizing
 
 For the machine size, HDD storage on a standard policy will be just fine. Standard_DS3_v2 or Standard_D4s_v3 work quite nicely. 
 
 Use managed disks, a 20Gb virtual disk size. 
 
-== Set a DNS name
+=== Set a DNS name
 
 When the virtual machine has been provisioned, set a DNS name in the virtual machine overview and take a note of the public IP address. 
 
 image::images/dnsName.png[]
 
-== Edit the Network Security Groups, and add a few basic rules; 
+=== Edit the Network Security Groups, and add a few basic rules; 
 
 image::images/dnsName.png[]
 
-== SSH into your VM
+=== SSH into your VM
 
 Get ready for some OpenShifting :-)
 
-= Prepare the machine for OpenShift
+== Prepare the machine for OpenShift
 
 == Disconnect from Red Hat Update Infrastructure; 
 
