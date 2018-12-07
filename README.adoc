@@ -19,4 +19,14 @@ Instructions may be deliberately brief, encouraging you to look into the answer
 
 == Provision a RHEL virtual machine from the marketplace 
 
-asdf.
+Use common sense details for the VM basics, you should use a SSH key if you have one, otherwise, use a strong password! Most importantly, make sure you deploy to the North Europe region (that’s where some lab materials are - keeps latency low). 
+
+image::images/provisioningDialog.png[]
+
+...
+
+== What can I try now? 
+
+1. If you know quite a lot about OpenShift already, but not Azure, start from challenge #7; https://github.com/palma21/openshiftlab#challenge--7-monitoring-openshift-with-azure-oms
+2. If you know quite a lot about Azure already, but not OpenShift, start from challenge #2; https://github.com/palma21/openshiftlab#challenge--2-create-and-manage-projects
+3. .NET and Azure focussed OpenShift demo; https://github.com/city-breaks-on-openshift
