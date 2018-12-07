@@ -9,6 +9,14 @@ This simple tutorial/demo script will talk you through the creation of a single 
 
 This would not be the recommended way for a production deployment of OpenShift on Azure. If you want to learn more about that, then check out this repository instead; http://aka.ms/openshift
 
+== What do I need before I get started?
+
+1. A working Azure account with at least $50 credit.
+2. Access to Red Hat OpenShift Container Platform subscriptions (NFRs, or lab repositories). 
+
+[NOTE]
+This lab would also work with OKD (community OpenShift), but the instructions and repositories would be a little different. Unfortunately you are on your own if you want to try OKD!
+
 == What will I do in this demo?
 
 1. You'll need a working Azure subscription and portal login to complete this demo.
@@ -20,13 +28,16 @@ This would not be the recommended way for a production deployment of OpenShift o
 This lab should between 30 and 45 minutes to complete.
 
 [NOTE]
-Instructions may be deliberately brief, encouraging you to look into the answer 
- a little yourself. Don’t be deterred if some steps take you a little longer to 
- find or fix, but do ask for help if you get stuck too long! Work in an 
- innovative way, together :)
+Instructions may be deliberately brief, **encouraging you to look into the answer 
+ a little yourself**. Don’t be upset if some steps take you a little longer to 
+ find or fix, but do ask for help if you get stuck too long! 
 
 
 == Provision a RHEL virtual machine from the marketplace 
+
+Naviate to the Azure Marketplace;
+
+image::images/marketplaceRhel.png[]
 
 Use common sense details for the VM basics, you should use a SSH key if you have one, otherwise, use a strong password! Most importantly, make sure you deploy to the North Europe region (that’s where some lab materials are - keeps latency low). 
 
