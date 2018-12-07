@@ -43,15 +43,21 @@ Provision a new RHEL 7.x machine. Use the latest version of RHEL available (7.6 
 
     * **Authentication Type**: You should use a SSH key if you have one, otherwise, create a **strong password**!
     * **Resource Group**: Create new: __openshift_occlusterup__
-    * **Location**: Use a region that is near to you!
+    * **Region**: Use a region that is near to you!
 
 image::images/provisioningDialog.png[]
 
 === Sizing
 
-For the machine size, HDD storage on a standard policy will be just fine. Standard_DS3_v2 or Standard_D4s_v3 work quite nicely. 
+OpenShift in this environment will run quite happily on 2x CPUs and 8Gb/RAM, but 4x CPUs and 16GB RAM is a lot nicer. If you have the credits available, this lab recomments using a **D4s_v3** sized virtual machine on Azure.
 
-Use managed disks, a 20Gb virtual disk size. 
+=== Disks
+
+Use managed disks if prompted. OpenShift will work just find with a Standard HDD storage, but if you have the credits available, select a **Premium SSD*.
+
+=== Start the provisioning, and wait for it to complete
+
+image::images/waitForProvisioning.png[]
 
 === Set a DNS name
 
