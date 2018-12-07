@@ -53,7 +53,7 @@ OpenShift in this environment will run quite happily on 2x CPUs and 8Gb/RAM, but
 
 === Disks
 
-Use managed disks if prompted. OpenShift will work just find with a Standard HDD storage, but if you have the credits available, select a **Premium SSD*.
+Use managed disks if prompted. OpenShift will work just find with a Standard HDD storage, but if you have the credits available, select a **Premium SSD**.
 
 === Start the provisioning, and wait for it to complete
 
@@ -71,13 +71,14 @@ image::images/dnsName.png[]
 
 === Edit the Network Security Groups, and add a few basic rules; 
 
+Port 8443, 22, and 80 should be open. You should add these as inbound ports in the network security group.
+
 image::images/nsg.png[]
 
-Port 8443, 22, and 80 should be open. 
 
 === SSH into your VM
 
-Use your favorite SSH client to connect to the OpenShift virtual machine. You need to use the username and ssh key/password specified during the provisioning process.
+Use your favorite SSH client (if you're on Windows, download PuTTY) to connect to the OpenShift virtual machine. You need to use the username and ssh key/password specified during the provisioning process.
 
 Get ready for some OpenShifting :-)
 
