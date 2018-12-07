@@ -1,0 +1,1 @@
+# single-node-openshift-azure-demo
