@@ -127,35 +127,54 @@ Disable all default repos, and then attach to the required repos.
     cd /etc/yum.repos.d/
     wget http://YOUR-ADDRESS-HERE.cloudapp.azure.com/repos/lab.repo 
 
-=== Install the `oc` client and Git
+=== Install the `oc` client, Docker and Git
 
     yum install atomic-openshift-clients git -y
 
-=== Install and setup Docker
+=== Setup Docker
 
-    yum install docker
-   
 Add the insecure registry options `--insecure-registry=172.30.0.0/16` to the docker config file;
 
     vim /etc/sysconfig/docker
+
+The file should have an OPTIONS line like this; 
+
+    OPTIONS='--selinux-enabled --log-driver=journald --signature-verification=false --insecure-registry=172.30.0.0/16 '
 
 Make docker start on boot, and then start it manually;
 
     systemctl enable docker
     systemctl start docker
 
+////
 === Configure iptables
 
     service iptables start
     iptables -F INPUT
+////
+
+=== Turn off the firewall for simplicity
+
+    systemctl stop firewalld
+    systemctl disable firewalld
+
+=== Login to the Red Hat Container Registry
+
+    docker login https://registry.redhat.io
+    Username: ...
+    Password: ...
 
 === Start OpenShift
 
-    oc cluster up --public-hostname=<yourDnsName>.azure.com --routing-suffix=<yourPublicIpAddress>.nip.io
+We're going to run OpenShift, running inside a container. It will take about 10 minutes to come up and should be fully automatic.
+
+    oc cluster up --enable '*,automation-service-broker,service-catalog,template-service-broker' --public-hostname=<yourDnsName>.azure.com --routing-suffix=<yourPublicIpAddress>.nip.io
+
+**Note**: You must use a valid DNS name (or IP address with nip.io) or the cluster may hang trying to contact itself when starting. 
 
 === Login to the web interface
 
-http://<yourDnsName>.azure.com:8443
+https://<yourDnsName>.azure.com:8443
 
 Have a little look around ;-) You can login as *developer* with any password.
 
