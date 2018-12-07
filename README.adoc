@@ -137,10 +137,6 @@ Add the insecure registry options in the docker configuration file `/etc/docker/
 
     { "insecure-registries": ["172.30.0.0/16"] }
 
-The file should have an OPTIONS line like this; 
-
-    OPTIONS='--selinux-enabled --log-driver=journald --signature-verification=false --insecure-registry=172.30.0.0/16 '
-
 Make docker start on boot, and then start it manually;
 
     systemctl enable docker
