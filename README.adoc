@@ -1,0 +1,22 @@
+:data-uri:
+
+= single-node-openshift-azure-demo
+
+== Outline 
+
+1. You'll need a working Azure subscription and portal login to complete this demo.
+2. Create a Azure RHEL virtual machine and connect to it with SSH.
+3. Enable the OpenShift repositories. 
+4. Configure Docker, and start a simple "all in one" OpenShift environment.
+5. Profit! ... and run labs ;-)
+
+[NOTE]
+Instructions may be deliberately brief, encouraging you to look into the answer 
+ a little yourself. Don’t be deterred if some steps take you a little longer to 
+ find or fix, but do ask for help if you get stuck too long! Work in an 
+ innovative way, together :)
+
+
+== Provision a RHEL virtual machine from the marketplace 
+
+asdf.
