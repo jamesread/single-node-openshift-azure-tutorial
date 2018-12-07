@@ -133,9 +133,9 @@ Disable all default repos, and then attach to the required repos.
 
 === Setup Docker
 
-Add the insecure registry options `--insecure-registry=172.30.0.0/16` to the docker config file;
+Add the insecure registry options in the docker configuration file `/etc/docker/daemon.json`; 
 
-    vim /etc/sysconfig/docker
+    { "insecure-registries": ["172.30.0.0/16"] }
 
 The file should have an OPTIONS line like this; 
 
