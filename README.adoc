@@ -3,13 +3,21 @@
 
 = single-node-openshift-azure-demo
 
-== Outline 
+== What is this?
+
+This simple tutorial/demo script will talk you through the creation of a single virtual machine (node) on Azure that is running OpenShift. It will use the "oc cluster up" mechanism to deploy OpenShift, which is great just for demos, labs, and that sort of thing. 
+
+This would not be the recommended way for a production deployment of OpenShift on Azure. If you want to learn more about that, then check out this repository instead; https://github.com/haroldwongms/openshift-containerplatform
+
+== What will I do in this demo?
 
 1. You'll need a working Azure subscription and portal login to complete this demo.
 2. Create a Azure RHEL virtual machine and connect to it with SSH.
 3. Enable the OpenShift repositories. 
 4. Configure Docker, and start a simple "all in one" OpenShift environment.
-5. Profit! ... and run labs ;-)
+5. Profit! ... and then run more exciting OpenShift workloads on Azure ;-)
+
+This lab should between 30 and 45 minutes to complete.
 
 [NOTE]
 Instructions may be deliberately brief, encouraging you to look into the answer 
