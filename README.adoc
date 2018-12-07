@@ -170,7 +170,7 @@ We're going to run OpenShift, running inside a container. It will take about 10 
 
 === Login to the web interface
 
-https://<yourDnsName>.azure.com:8443
+https://<yourDnsName>.azure.com:8443/console
 
 Have a little look around ;-) You can login as *developer* with any password.
 
