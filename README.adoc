@@ -65,15 +65,19 @@ image::images/provisioningComplete.png[]
 
 === Set a DNS name
 
-When the virtual machine has been provisioned, set a DNS name in the virtual machine overview and take a note of the public IP address. 
+When the virtual machine has been provisioned, set a DNS name in the virtual machine overview and take a note of the public IP address in your notes.
 
 image::images/dnsName.png[]
 
 === Edit the Network Security Groups, and add a few basic rules; 
 
-image::images/dnsName.png[]
+image::images/nsg.png[]
+
+Port 8443, 22, and 80 should be open. 
 
 === SSH into your VM
+
+Use your favorite SSH client to connect to the OpenShift virtual machine. You need to use the username and ssh key/password specified during the provisioning process.
 
 Get ready for some OpenShifting :-)
 
