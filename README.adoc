@@ -23,10 +23,100 @@ Use common sense details for the VM basics, you should use a SSH key if you have
 
 image::images/provisioningDialog.png[]
 
-...
+== Sizing
+
+For the machine size, HDD storage on a standard policy will be just fine. Standard_DS3_v2 or Standard_D4s_v3 work quite nicely. 
+
+Use managed disks, a 20Gb virtual disk size. 
+
+== Set a DNS name
+
+When the virtual machine has been provisioned, set a DNS name in the virtual machine overview and take a note of the public IP address. 
+
+image::images/dnsName.png[]
+
+== Edit the Network Security Groups, and add a few basic rules; 
+
+image::images/dnsName.png[]
+
+== SSH into your VM
+
+Get ready for some OpenShifting :-)
+
+= Prepare the machine for OpenShift
+
+== Disconnect from Red Hat Update Infrastructure; 
+
+RHEL machines provisioned from the marketplace come connected to Red Hat Update Infrastructure. However, Red Hat Update Infrastructure is for RHEL only, not OpenShift.
+
+    root@openshift-allinone: rpm -e rhui-azure-rhel7
+
+=== Option a) If you have a working Red Hat subscription; 
+
+    subscription-manager register
+    Username: …
+    Password: …
+
+Find a pool ID with OpenShift, and make a note of the pool ID.
+
+    subscription-manager list --available
+
+Attach to this pool;
+
+    subscription-manager attach --pool=...
+
+Disable all default repos, and then attach to the required repos.
+
+    subscription-manager repos --disable ‘*’
+
+    subscription-manager repos --enable ‘rhel-7-server-rpms’
+    subscription-manager repos --enable ‘rhel-7-server-extras-rpms’
+    subscription-manager repos --enable ‘rhel-7-server-ose-3.6-rpms’
+
+=== Option b) If you have a repository provided by your lab administrator; 
+
+    cd /etc/yum.repos.d/
+    wget http://YOUR-ADDRESS-HERE.cloudapp.azure.com/repos/lab.repo 
+
+=== Install the `oc` client and Git
+
+    yum install atomic-openshift-clients git -y
+
+=== Install and setup Docker
+
+    yum install docker
+   
+Add the insecure registry options `--insecure-registry=172.30.0.0/16` to the docker config file;
+
+    vim /etc/sysconfig/docker
+
+Make docker start on boot, and then start it manually;
+
+    systemctl enable docker
+    systemctl start docker
+
+=== Configure iptables
+
+    service iptables start
+    iptables -F INPUT
+
+=== Start OpenShift
+
+    oc cluster up --public-hostname=<yourDnsName>.azure.com --routing-suffix=<yourPublicIpAddress>.nip.io
+
+=== Login to the web interface
+
+http://<yourDnsName>.azure.com:8443
+
+Have a little look around ;-) You can login as *developer* with any password.
+
+== Service Broker for Azure
+
+FIXME
 
 == What can I try now? 
 
-1. If you know quite a lot about OpenShift already, but not Azure, start from challenge #7; https://github.com/palma21/openshiftlab#challenge--7-monitoring-openshift-with-azure-oms
-2. If you know quite a lot about Azure already, but not OpenShift, start from challenge #2; https://github.com/palma21/openshiftlab#challenge--2-create-and-manage-projects
-3. .NET and Azure focussed OpenShift demo; https://github.com/city-breaks-on-openshift
+1. Deploy `php-show-my-hostname`; https://github.com/jamesread/php-show-my-hostname.git 
+2. If you know quite a lot about OpenShift already, but not Azure, start from challenge #7; https://github.com/palma21/openshiftlab#challenge--7-monitoring-openshift-with-azure-oms
+3. If you know quite a lot about Azure already, but not OpenShift, start from challenge #2; https://github.com/palma21/openshiftlab#challenge--2-create-and-manage-projects
+4. .NET and Azure focussed OpenShift demo; https://github.com/city-breaks-on-openshift
