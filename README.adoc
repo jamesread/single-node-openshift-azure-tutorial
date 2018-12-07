@@ -113,7 +113,16 @@ Have a little look around ;-) You can login as *developer* with any password.
 
 == Service Broker for Azure
 
-FIXME
+
+=== Create a service principal 
+
+https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal
+
+=== Install the service broker
+
+Install the service broker using instructions from here;
+
+https://github.com/Azure/open-service-broker-azure#openshift-project-template
 
 == What can I try now? 
 
