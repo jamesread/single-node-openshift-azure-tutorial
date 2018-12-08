@@ -177,8 +177,11 @@ Have a little look around ;-) You can login as *developer* with any password.
 
 image::images/openshiftLogin.png[]
 
-== Service Broker for Azure
+== Add .NET support
 
+    oc cluster add centos-imagestreams
+
+== Service Broker for Azure
 
 === Create a service principal 
 
