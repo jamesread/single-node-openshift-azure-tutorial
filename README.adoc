@@ -130,7 +130,7 @@ Disable all default repos, and then attach to the required repos.
 
 === Install the `oc` client, Docker and Git
 
-    yum install atomic-openshift-clients git -y
+    yum install atomic-openshift-clients docker git -y
 
 === Setup Docker
 
