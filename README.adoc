@@ -1,7 +1,7 @@
 :data-uri:
 :toc:
 
-= single-node-openshift-azure-demo
+= single-node-openshift-azure-tutorial
 
 == What is this?
 
@@ -17,9 +17,9 @@ This would not be the recommended way for a production deployment of OpenShift o
 [NOTE]
 This lab would also work with OKD (community OpenShift), but the instructions and repositories would be a little different. Unfortunately you are on your own if you want to try OKD!
 
-=== What will I do in this demo?
+=== What will I do in this tutorial?
 
-1. You'll need a working Azure subscription and portal login to complete this demo.
+1. You'll need a working Azure subscription and portal login to complete this.
 2. Create a Azure RHEL virtual machine and connect to it with SSH.
 3. Enable the OpenShift repositories. 
 4. Configure Docker, and start a simple "all in one" OpenShift environment.
