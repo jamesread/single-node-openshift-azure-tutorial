@@ -99,8 +99,9 @@ RHEL machines provisioned from the marketplace come connected to Red Hat Update 
 
 === Configure OpenShift repositories
 
-In the next section, choose __Option A__ **or** __Option B__. Don't do both :-)
+In the next section, choose link:#subs-option-a[__Option A__] **or** link:#subs-option-b[__Option B__]. Don't do both :-)
 
+[#subs-option-a]
 ==== Option a) If you have a working Red Hat subscription; 
 
     subscription-manager register
@@ -123,6 +124,7 @@ Disable all default repos, and then attach to the required repos.
     subscription-manager repos --enable 'rhel-7-server-extras-rpms'
     subscription-manager repos --enable 'rhel-7-server-ose-3.11-rpms'
 
+[#subs-option-b]
 ==== Option b) If you have a repository provided by your lab administrator; 
 
     cd /etc/yum.repos.d/
@@ -132,7 +134,12 @@ Disable all default repos, and then attach to the required repos.
 
     yum install atomic-openshift-clients docker git -y
 
-=== Setup Docker
+=== Enable port 8443 in the Linux firewall;
+
+    firewall-cmd --add-service tcp/8443 --permanent 
+    firewall-cmd --reload
+
+== Setup Docker
 
 Add the insecure registry options in the docker configuration file `/etc/docker/daemon.json`; 
 
@@ -149,11 +156,6 @@ Make docker start on boot, and then start it manually;
     service iptables start
     iptables -F INPUT
 ////
-
-=== Turn off the firewall for simplicity
-
-    systemctl stop firewalld
-    systemctl disable firewalld
 
 === Login to the Red Hat Container Registry
 
