@@ -159,11 +159,26 @@ Make docker start on boot, and then start it manually;
 
 === Login to the Red Hat Container Registry
 
+In the next section, choose link:#registry-option-a[__Option A__] **or** link:#registry-option-b[__Option B__]. Don't do both :-)
+
+[#subs-option-a]
+==== Option a) If you have a working Red Hat user and login
+
     docker login https://registry.redhat.io
     Username: ...
     Password: ...
 
+[#subs-option-a]
+==== Option a) If you have a registry login file provided by your lab administrator
+
+[FIXME]
+Instructions not yet written for this!
+
 === Start OpenShift
+
+Make sure you are in the root home directory before continuing;
+
+    cd /root/ 
 
 We're going to run OpenShift, running inside a container. It will take about 10 minutes to come up and should be fully automatic.
 
