@@ -1,4 +1,5 @@
 :data-uri:
+:sectnums:
 :toc:
 
 = single-node-openshift-azure-tutorial
