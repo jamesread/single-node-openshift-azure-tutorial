@@ -175,7 +175,7 @@ In the next section, choose link:#registry-option-a[__Option A__] **or** link:#r
 [FIXME]
 Instructions not yet written for this!
 
-=== Start OpenShift
+== Start OpenShift
 
 Make sure you are in the root home directory before continuing;
 
@@ -195,23 +195,25 @@ Have a little look around ;-) You can login as *developer* with any password.
 
 image::images/openshiftLogin.png[]
 
-== Add .NET support from CentOS
+== Optional Azure tasks; 
+
+=== Add .NET support from CentOS
 
 On the virtual machine, enter this command; 
 
     oc cluster add centos-imagestreams
 
-== Service Broker for Azure
+=== Service Broker for Azure
 
 Installing the Open Service Broker for Azure is a 2-step process. The first step is getting a service principal, the second issue is then installing the service broker. 
 
-=== Create a service principal 
+==== Create a service principal 
 
 A service broker is like a "username and password" to have admin access for Azure.
 
 https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal
 
-=== Install the service broker
+==== Install the service broker
 
 Install the service broker using instructions from here;
 
