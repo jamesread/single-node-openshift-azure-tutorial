@@ -232,5 +232,5 @@ https://github.com/Azure/open-service-broker-azure#openshift-project-template
 1. Deploy `php-ascii-pets`; https://github.com/jamesread/php-ascii-pets.git 
 2. If you know quite a lot about OpenShift already, but not Azure, start from challenge #7; https://github.com/palma21/openshiftlab#challenge--7-monitoring-openshift-with-azure-oms
 3. If you know quite a lot about Azure already, but not OpenShift, start from challenge #2; https://github.com/palma21/openshiftlab#challenge--2-create-and-manage-projects
-4. .NET and Azure focussed OpenShift demo; https://github.com/city-breaks-on-openshift
+4. .NET and Azure focussed OpenShift demo; https://github.com/city-holidays-on-openshift-azure
 5. If you fancy a challenge; https://github.com/jbossdemocentral/coolstore-microservice
