@@ -161,15 +161,15 @@ Make docker start on boot, and then start it manually;
 
 In the next section, choose link:#registry-option-a[__Option A__] **or** link:#registry-option-b[__Option B__]. Don't do both :-)
 
-[#subs-option-a]
+[#registry-option-a]
 ==== Option a) If you have a working Red Hat user and login
 
     docker login https://registry.redhat.io
     Username: ...
     Password: ...
 
-[#subs-option-a]
-==== Option a) If you have a registry login file provided by your lab administrator
+[#registry-option-b]
+==== Option b) If you have a registry login file provided by your lab administrator
 
 [FIXME]
 Instructions not yet written for this!
