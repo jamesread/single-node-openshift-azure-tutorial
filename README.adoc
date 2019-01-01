@@ -10,6 +10,8 @@ This simple tutorial/demo script will talk you through the creation of a single 
 
 This would not be the recommended way for a production deployment of OpenShift on Azure. If you want to learn more about that, then check out this repository instead; http://aka.ms/openshift
 
+**This is community documentation - not official Red Hat documentation or guidance.**
+
 === What do I need before I get started?
 
 1. A working Azure account with at least $50 credit.
@@ -142,6 +144,8 @@ Disable all default repos, and then attach to the required repos.
 
 == Setup Docker
 
+=== Insecure registries 
+
 Add the insecure registry options in the docker configuration file `/etc/docker/daemon.json`; 
 
     { "insecure-registries": ["172.30.0.0/16"] }
@@ -175,7 +179,9 @@ In the next section, choose link:#registry-option-a[__Option A__] **or** link:#r
 [FIXME]
 Instructions not yet written for this!
 
-== Start OpenShift
+== Start and Login to OpenShift
+
+=== Start OpenShift 
 
 Make sure you are in the root home directory before continuing;
 
@@ -196,6 +202,8 @@ Have a little look around ;-) You can login as *developer* with any password.
 image::images/openshiftLogin.png[]
 
 == Optional Azure tasks; 
+
+These tasks are **optional**. You can skip over this section if you like.
 
 === Add .NET support from CentOS
 
