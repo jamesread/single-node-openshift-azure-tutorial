@@ -139,7 +139,11 @@ Disable all default repos, and then attach to the required repos.
 
 === Enable port 8443 in the Linux firewall;
 
-    firewall-cmd --add-service tcp/8443 --permanent 
+Port 8443 is for the OpenShift Web Administration console.
+Port 80 is for your web application containers.
+
+    firewall-cmd --add-port tcp/80 --permanent 
+    firewall-cmd --add-port tcp/8443 --permanent 
     firewall-cmd --reload
 
 == Setup Docker
