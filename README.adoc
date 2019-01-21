@@ -154,6 +154,9 @@ Add the insecure registry options in the docker configuration file `/etc/docker/
 
     { "insecure-registries": ["172.30.0.0/16"] }
 
+[NOTE]
+**Do not** change the IP address of the `insecure-registries`, leave it as default - `172.30.0.0`. This is the IP Network address of the `docker0` interface on your virtual machine. 
+
 Make docker start on boot, and then start it manually;
 
     systemctl enable docker
