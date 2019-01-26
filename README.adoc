@@ -196,7 +196,7 @@ Make sure you are in the root home directory before continuing;
 
 We're going to run OpenShift, running inside a container. It will take about 10 minutes to come up and should be fully automatic.
 
-    oc cluster up --enable '*,automation-service-broker,service-catalog,template-service-broker' --public-hostname=<yourDnsName>.azure.com --routing-suffix=<yourPublicIpAddress>.nip.io
+    oc cluster up --enable '*,automation-service-broker,service-catalog,template-service-broker' --public-hostname=<yourPublicIpAddress> --routing-suffix=<yourPublicIpAddress>.nip.io
 
 **Note**: You must use a valid DNS name (or IP address with nip.io) or the cluster may hang trying to contact itself when starting. 
 
